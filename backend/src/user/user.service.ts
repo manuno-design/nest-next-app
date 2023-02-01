@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { UPdateUserDto } from './dto/update-user.dto';
+import { UpdateUserDto } from './dto/update-user.dto';
 import { User } from '@prisma/client';
 
 @Injectable()
@@ -9,7 +9,7 @@ export class UserService {
 
     async updateUser(
         userId: number,
-        dto: UPdateUserDto
+        dto: UpdateUserDto
     ): Promise<Omit<User, 'hashedPassword'>> {
         const user = await this.prisma.user.update({
             where: {

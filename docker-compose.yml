@@ -9,6 +9,7 @@ services:
       - "~/.ssh:/root/.ssh"
       - ".:/root/app"
     working_dir: "/root/app"
+    restart: always
     networks:
       - app-network
   db:
