@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             const { data } = await axios.get(
                 `${process.env.NEXT_PUBLIC_API_URL}/auth/csrf`
             )
-            axios.defaults.headers.common['csrf-token'] = data.csrdToken
+            axios.defaults.headers.common['csrf-token'] = data.csrfToken
         }
         getCsrfToken()
     }, [])
